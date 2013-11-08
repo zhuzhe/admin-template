@@ -1,34 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <a href="#">活动管理</a>
 
-<p>
-  <strong>Name:</strong>
-  <%= @activity.name %>
-</p>
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li class="active">
+      <%= @activity.name%>
+    </li>
+  </ul>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @activity.content %>
-</p>
+<div class="page-content">
 
-<p>
-  <strong>Start time:</strong>
-  <%= @activity.start_time %>
-</p>
+  <a href="<%= activities_path%>" class="btn btn-app btn-pink btn-mini">
+    <i class="icon-share-alt small-125"></i>
+  </a>
 
-<p>
-  <strong>End time:</strong>
-  <%= @activity.end_time %>
-</p>
+  <a href="<%= edit_activity_path(@activity) %>
+    " class="btn btn-app btn-primary  btn-mini">
+    <i class="icon-edit small-125"></i>
+  </a>
 
-<p>
-  <strong>Author:</strong>
-  <%= @activity.author %>
-</p>
+  <a href="<%= activity_rewards_path(@activity) %>" class="btn btn-app btn-purple btn-mini">
+      <i class="icon-cloud-upload small-125"></i>
+  </a>
 
-<p>
-  <strong>Published:</strong>
-  <%= @activity.published %>
-</p>
+  <h3 class="header smaller lighter green"></h3>                    
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+
+  <p>
+    <strong>名称:</strong>
+    <%= @activity.name %>
+  </p>
+
+  <p>
+    <strong>内容:</strong>
+    <%= @activity.content %>
+  </p>
+
+  <p>
+    <strong>作者:</strong>
+    <%= @activity.author %>
+  </p>
+
+  <p>
+    <strong>发布:</strong>
+    <%= @activity.published %>
+  </p>
+
+
+
+</div>
+
+
+
+
+

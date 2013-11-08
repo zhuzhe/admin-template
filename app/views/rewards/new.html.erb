@@ -1,22 +1,23 @@
+
 <div class="breadcrumbs" id="breadcrumbs">
   <ul class="breadcrumb">
     <li>
       <i class="icon-home home-icon"></i>
-      <%= link_to "活动管理", activities_path %>
+      <a href="#">活动管理</a>
 
       <span class="divider">
         <i class="icon-angle-right arrow-icon"></i>
       </span>
     </li>
     <li class="active">
-      创建新活动
+      添加奖品
     </li>
   </ul>
 </div>
 
 <div class="page-content">
 
-  <a href="<%= activities_path%>" class="btn btn-app btn-pink btn-mini">
+  <a href="<%= activity_rewards_path(@activity)%>" class="btn btn-app btn-pink btn-mini">
     <i class="icon-share-alt small-125"></i>
   </a>
 

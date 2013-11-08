@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reward.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @reward.desc %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @reward.photo %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @reward.amount %>
+</p>
+
+<p>
+  <%= image_tag @reward.photo_url.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_reward_path(@reward) %> |
+<%= link_to 'Back', rewards_path %>

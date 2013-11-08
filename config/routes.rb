@@ -1,5 +1,11 @@
 Lottery::Application.routes.draw do
-  resources :activities
+  
+  resources :rewards
+  
+  resources :activities do
+    resources :rewards
+  end
+
 
   devise_for :users, :controllers => { :sessions => "sessions" }
   # The priority is based upon order of creation: first created -> highest priority.

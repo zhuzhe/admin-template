@@ -6,6 +6,8 @@ gem 'rails', '4.0.1'
 gem 'devise'
 gem 'mysql2'
 
+gem "paperclip", "~> 3.0"
+
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 
