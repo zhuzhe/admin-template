@@ -45,9 +45,14 @@
         <td>
           <%= activity.end_time %></td>
         <td>
-          <%= activity.author %></td>
+          <%= activity.user and activity.user.title %></td>
         <td>
-          <%= activity.published %></td>
+          <% if activity.published %>
+            <span style="color:green"><%= activity.published.to_cn%></span>  
+          <% else %>  
+            <span style="color:red"><%= activity.published.to_cn%></span>  
+          <% end -%>  
+        </td>
         <td>
           <div class="hidden-phone visible-desktop btn-group">
             <a href="<%= activity_path(activity)%>" class="btn btn-mini btn-success">

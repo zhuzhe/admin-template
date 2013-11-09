@@ -1,6 +1,38 @@
-<h1>Editing activity</h1>
+
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to "活动管理", activities_path %>
+
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to @activity.name, @activity %>
+
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li class="active">
+      编辑
+    </li>
+  </ul>
+</div>
+
+<div class="page-content">
+
+  <a href="<%= activities_path%>" class="btn btn-app btn-pink btn-mini">
+    <i class="icon-share-alt small-125"></i>
+  </a>
+
+  <h3 class="header smaller lighter green"></h3>                    
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @activity %> |
-<%= link_to 'Back', activities_path %>
+
+
+</div>

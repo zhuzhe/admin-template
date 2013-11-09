@@ -24,12 +24,8 @@ class RewardsController < ApplicationController
   # POST /rewards
   # POST /rewards.json
   def create
-    p "a================="
-    p params[:reward]
-    p "==================="
     @activity = Activity.find(params[:reward][:activity_id])
     @reward = Reward.new(reward_params)
-
     respond_to do |format|
       if @reward.save
         format.html { redirect_to @reward, notice: 'Reward was successfully created.' }
@@ -58,9 +54,10 @@ class RewardsController < ApplicationController
   # DELETE /rewards/1
   # DELETE /rewards/1.json
   def destroy
+    @activity = @reward.activity
     @reward.destroy
     respond_to do |format|
-      format.html { redirect_to rewards_url }
+      format.html { redirect_to activity_rewards_path(@activity) }
       format.json { head :no_content }
     end
   end

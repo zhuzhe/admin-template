@@ -43,13 +43,18 @@
   </p>
 
   <p>
-    <strong>作者:</strong>
-    <%= @activity.author %>
+    <strong>时限:</strong>
+    <%= @activity.start_time%> - <%= @activity.end_time %>
   </p>
 
   <p>
     <strong>发布:</strong>
-    <%= @activity.published %>
+    <%= @activity.published.to_cn %>
+  </p>
+
+  <p>
+    <strong>作者:</strong>
+    <%= @activity.author %>
   </p>
 
 

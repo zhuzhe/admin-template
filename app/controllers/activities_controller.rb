@@ -1,6 +1,8 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_date_range, only: [:create, :update]
+
   # GET /activities
   # GET /activities.json
   def index
@@ -25,7 +27,7 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
-
+    @activity.user = current_user
     respond_to do |format|
       if @activity.save
         format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
@@ -70,5 +72,12 @@ class ActivitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
       params.require(:activity).permit(:name, :content, :start_time, :end_time, :author, :published)
+    end
+
+    def set_date_range
+      start_time, end_time = params[:date_range].split('-')
+      params[:activity][:start_time] = start_time
+      params[:activity][:end_time] = end_time
+      p activity_params
     end
 end

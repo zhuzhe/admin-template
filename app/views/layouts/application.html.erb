@@ -38,7 +38,8 @@
 
   <%= javascript_include_tag "application" %>
 
-  <%= yield :head %></head>
+  <%= yield :head %>
+</head>
 
 <body>
   <div class="navbar">
@@ -345,7 +346,7 @@
             <span class="menu-text">Dashboard</span>
           </a>
         </li>
-        <% if request.path == activities_path %>
+        <% if '/' + request.path.split('/')[1] == activities_path %>
         <li class="active">
           <% else %>
           <li>
@@ -470,14 +471,11 @@
 <script src="/assets/js/jquery.slimscroll.min.js"></script>
 <script src="/assets/js/jquery.easy-pie-chart.min.js"></script>
 <script src="/assets/js/jquery.sparkline.min.js"></script>
-<script src="/assets/js/flot/jquery.flot.min.js"></script>
-<script src="/assets/js/flot/jquery.flot.pie.min.js"></script>
-<script src="/assets/js/flot/jquery.flot.resize.min.js"></script>
 
 <!--ace scripts-->
 
 <script src="/assets/js/ace-elements.min.js"></script>
-<script src="/assets/js/ace.min.js"></script>
+<!-- <script src="/assets/js/ace.min.js"></script> -->
 
 <!--inline scripts related to this page-->
 
