@@ -2,8 +2,7 @@
   <ul class="breadcrumb">
     <li>
       <i class="icon-home home-icon"></i>
-      <a href="#">活动管理</a>
-
+      <%= link_to "活动管理", activities_path %>
       <span class="divider">
         <i class="icon-angle-right arrow-icon"></i>
       </span>
@@ -53,10 +52,48 @@
   </p>
 
   <p>
-    <strong>作者:</strong>
-    <%= @activity.author %>
+    <strong>创建者:</strong>
+    <%= @activity.author_name %>
   </p>
 
+  <p>
+    <strong>消耗网络流量:</strong>
+    <%= @activity.count_net %>
+  </p>  
+
+  <p>
+    <strong>消耗短信:</strong>
+    <%= @activity.count_calls %>
+  </p>  
+
+  <p>
+    <strong>消耗话费:</strong>
+    <%= @activity.count_sms %>
+  </p>  
+
+    <h3 class="header smaller lighter green"></h3>
+  <h3>消费</h3>
+  <table  class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>购买ID</th>
+        <th>消费者</th>
+        <th>奖券</th>
+        <th>创建时间</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id%></td>
+          <td><%= order.consumer.phone%></td>
+          <td><%= order.ticket.uid%></td>
+          <td><%= order.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 
 </div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  consumer_id: 1
+  reward_id: 1
+  used_time: 2013-11-11
+  is_used: false
+
+two:
+  uid: MyString
+  consumer_id: 1
+  reward_id: 1
+  used_time: 2013-11-11
+  is_used: false

@@ -47,6 +47,21 @@
         <%= f.label :desc, "简介" %>
         <%= f.text_field :desc %>
 
+        <%= f.label :address, "地址" %>
+        <%= f.text_field :address %>
+
+        <%= f.label :conversion_time, "兑换时间" %>
+        <%= f.text_field :conversion_time %>
+
+        <%= f.label :bussiness_id, "商家" %>
+        <%= f.select :bussiness_id, options_from_collection_for_select(Bussiness.all, :id, :name) %>
+
+        <%= f.label :amount, "数量" %>
+        <%= f.text_field :amount %>
+
+        <%= f.label :rate, "概率" %>
+        <%= f.text_field :rate %>
+
         <%= f.label :photo_url, "上传照片" %>
         <%= f.file_field :photo_url %>        
 

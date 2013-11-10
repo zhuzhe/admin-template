@@ -1,0 +1,31 @@
+
+<div class="widget-box">
+  <div class="widget-header">
+    <h4>消费者</h4>
+  </div>
+
+  <div class="widget-body">
+    <div class="widget-main no-padding">
+      <%= form_for(@consumer) do |f| %>
+      <!--<legend>Form</legend>
+    -->
+    <fieldset>
+      <%= f.label :phone, "手机号码" %>
+      <%= f.text_field :phone %>
+      <!-- <span class="help-block">Example block-level help text here.</span>
+    -->
+      <%= f.label :name, "名字" %>
+      <%= f.text_field :name %>
+
+    <!-- <span class="help-block">Example block-level help text here.</span>
+  -->
+</fieldset>
+
+<div class="form-actions center">
+  <button class="btn btn-small btn-success">
+    提交 <i class="icon-arrow-right icon-on-right bigger-110"></i>
+  </button>
+</div>
+<% end -%></div>
+</div>
+</div>

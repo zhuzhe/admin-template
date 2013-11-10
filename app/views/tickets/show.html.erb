@@ -1,0 +1,83 @@
+
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to "活动管理", activities_path %>
+
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to @activity.name, @activity %>
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to "奖券", activity_tickets_path(@activity) %>
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+
+    <li class="active">
+      <%= @ticket.uid%>
+    </li>
+  </ul>
+</div>
+
+<div class="page-content">
+
+  <a href="<%= activity_tickets_path(@activity) %>" class="btn btn-app btn-pink btn-mini">
+    <i class="icon-share-alt small-125"></i>
+  </a>
+
+  <a href="<%= edit_ticket_path(@ticket) %>
+    " class="btn btn-app btn-primary  btn-mini">
+    <i class="icon-edit small-125"></i>
+  </a>
+
+  <h3 class="header smaller lighter green"></h3>                    
+
+
+  <p>
+    <strong>唯一编号:</strong>
+    <%= @ticket.uid %>
+  </p>
+
+  <p>
+    <strong>获得者:</strong>
+    <%= @ticket.consumer_id %>
+  </p>
+
+  <p>
+    <strong>奖品:</strong>
+    <%= @ticket.reward.name %>
+  </p>
+
+  <p>
+    <strong>是否使用:</strong>
+    <%= @ticket.is_used %>
+  </p>
+
+  <p>
+    <strong>使用时间:</strong>
+    <%= @ticket.used_time %>
+  </p>
+
+
+
+
+
+</div>
+
+
+
+
+
+

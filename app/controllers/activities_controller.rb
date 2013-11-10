@@ -12,6 +12,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
+    @orders = @activity.orders
   end
 
   # GET /activities/new

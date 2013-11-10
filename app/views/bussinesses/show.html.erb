@@ -1,0 +1,47 @@
+
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to "商家管理", bussinesses_path %>
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li class="active">
+      <%= @bussiness.name%>
+    </li>
+  </ul>
+</div>
+
+<div class="page-content">
+
+  <a href="<%= bussinesses_path%>" class="btn btn-app btn-pink btn-mini">
+    <i class="icon-share-alt small-125"></i>
+  </a>
+
+  <a href="<%= edit_bussiness_path(@bussiness) %>
+    " class="btn btn-app btn-primary  btn-mini">
+    <i class="icon-edit small-125"></i>
+  </a>
+
+  <h3 class="header smaller lighter green"></h3>                    
+
+
+  <p>
+    <strong>名称:</strong>
+    <%= @bussiness.name %>
+  </p>
+
+  <p>
+    <strong>加入时间:</strong>
+    <%= @bussiness.join_time %>
+  </p>
+
+
+</div>
+
+
+
+
+

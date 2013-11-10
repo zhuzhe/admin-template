@@ -22,16 +22,20 @@
 <script src="/assets/js/bootstrap-tag.min.js"></script>
 
 <script type="text/javascript">
-    jQuery(function($){
-        $(document).ready(function () {
+    ready = function($){
           $('#id-date-range-picker-1').daterangepicker(
             {
               format: 'YYYY/MM/DD'
             }
           );
-        })
+    }; 
+    jQuery(ready);
 
+    jQuery(function ($) {
+      $(document).on('page:load', ready);  
     });
+    
+
 
   </script>
 

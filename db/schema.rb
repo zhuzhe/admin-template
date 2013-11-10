@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109144159) do
+ActiveRecord::Schema.define(version: 20131110175523) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -23,13 +23,39 @@ ActiveRecord::Schema.define(version: 20131109144159) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "consume_type_id"
+    t.integer  "consume_amount",  default: 0
+  end
+
+  create_table "bussinesses", force: true do |t|
+    t.string   "name"
+    t.date     "join_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "consumers", force: true do |t|
+    t.string   "phone"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "consumer_id"
+    t.integer  "activity_id"
+    t.integer  "ticket_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "consume_type",   default: 0
+    t.integer  "consume_amount", default: 0
   end
 
   create_table "rewards", force: true do |t|
     t.string   "name"
     t.string   "desc"
     t.string   "photo"
-    t.integer  "amount"
+    t.integer  "amount",                 default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "activity_id"
@@ -37,6 +63,23 @@ ActiveRecord::Schema.define(version: 20131109144159) do
     t.string   "photo_url_content_type"
     t.integer  "photo_url_file_size"
     t.datetime "photo_url_updated_at"
+    t.float    "rate",                   default: 0.0
+    t.string   "address"
+    t.integer  "business_id"
+    t.string   "conversion_time"
+    t.integer  "bussiness_id"
+  end
+
+  create_table "tickets", force: true do |t|
+    t.string   "uid"
+    t.integer  "consumer_id"
+    t.integer  "reward_id"
+    t.date     "used_time"
+    t.boolean  "is_used"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "activity_id"
+    t.string   "phone"
   end
 
   create_table "users", force: true do |t|

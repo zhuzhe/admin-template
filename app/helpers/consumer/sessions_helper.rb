@@ -1,0 +1,2 @@
+module Consumer::SessionsHelper
+end

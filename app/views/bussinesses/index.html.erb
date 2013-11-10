@@ -1,0 +1,58 @@
+
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <%= link_to "商家管理", bussinesses_path %>
+      <span class="divider"> <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li class="active">总览</li>
+  </ul>
+</div>
+
+<div class="page-content">
+
+  <a href="<%= new_bussiness_path %>
+    " class="btn btn-app btn-primary no-radius btn-small">
+    <i class="icon-edit small-125"></i>
+    新商家
+  </a>
+
+  <h3 class="header smaller lighter green"></h3>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>加入时间</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bussinesses.each do |bussiness| %>
+      <tr>
+        <td>
+          <%= bussiness.name %></td>
+        <td>
+          <%= bussiness.join_time %></td>
+        <td>
+          <div class="hidden-phone visible-desktop btn-group">
+            <a href="<%= bussiness_path(bussiness)%>" class="btn btn-mini btn-success">
+              <i class="icon-ok bigger-120"></i>
+            </a>
+
+            <a href="<%= edit_bussiness_path(bussiness) %>" class="btn btn-mini btn-info">
+              <i class="icon-edit bigger-120"></i>
+            </a>
+
+            <%= link_to bussiness, method: :delete, :class => "btn btn-mini btn-danger", data: { confirm: '确定删除?' } do %> 
+              <i class="icon-trash bigger-120"></i>
+            <% end -%>
+          </div>
+
+        </td>
+  <% end %></tbody>
+</table>
+
+<br></div>

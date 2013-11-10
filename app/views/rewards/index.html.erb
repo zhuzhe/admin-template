@@ -22,7 +22,7 @@
   <a href="<%= new_activity_reward_path(@activity) %>
     " class="btn btn-app btn-primary no-radius btn-small">
     <i class="icon-edit small-125"></i>
-    创建
+    新奖品
   </a>
 
   <h3 class="header smaller lighter green"></h3>
@@ -32,6 +32,9 @@
       <tr>
         <th>名称</th>
         <th>简介</th>
+        <th>商家</th>
+        <th>数量</th>
+        <th>剩余</th>
         <th></th>
       </tr>
     </thead>
@@ -43,6 +46,9 @@
           <%= reward.name %></td>
         <td>
           <%= reward.desc %></td>
+        <td><%= reward.bussiness.name%></td>
+        <td><%= reward.amount %></td>
+        <td><%= reward.left_amount %></td>
         <td>
           <div class="hidden-phone visible-desktop btn-group">
             <a href="<%= reward_path(reward)%>" class="btn btn-mini btn-success">

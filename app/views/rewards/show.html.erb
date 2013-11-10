@@ -1,28 +1,71 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @reward.name %>
-</p>
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to "活动管理", activities_path %>
 
-<p>
-  <strong>Desc:</strong>
-  <%= @reward.desc %>
-</p>
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to @activity.name, @activity %>
+      <span class="divider">
+        <i class="icon-angle-right arrow-icon"></i>
+      </span>
+    </li>
+    <li class="active">
+      <%= @reward.name%>
+    </li>
+  </ul>
+</div>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @reward.photo %>
-</p>
+<div class="page-content">
 
-<p>
-  <strong>Amount:</strong>
-  <%= @reward.amount %>
-</p>
+  <a href="<%= activity_path(@activity) %>" class="btn btn-app btn-pink btn-mini">
+    <i class="icon-share-alt small-125"></i>
+  </a>
 
-<p>
-  <%= image_tag @reward.photo_url.url(:thumb) %>
-</p>
+  <a href="<%= edit_reward_path(@reward) %>
+    " class="btn btn-app btn-primary  btn-mini">
+    <i class="icon-edit small-125"></i>
+  </a>
 
-<%= link_to 'Edit', edit_reward_path(@reward) %> |
-<%= link_to 'Back', rewards_path %>
+  <h3 class="header smaller lighter green"></h3>                    
+
+
+  <p>
+    <strong>名称:</strong>
+    <%= @reward.name %>
+  </p>
+
+  <p>
+    <strong>简介:</strong>
+    <%= @reward.desc %>
+  </p>
+
+  <p>
+    <strong>最大数量:</strong>
+    <%= @reward.amount %>
+  </p>
+
+  <p>
+    <strong>剩余:</strong>
+    <%= @reward.amount %>
+  </p>
+
+  <p>
+    <%= image_tag @reward.photo_url.url(:medium) %>
+  </p>
+
+
+
+</div>
+
+
+
+
+
+

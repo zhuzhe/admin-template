@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Login Page - Ace Admin</title>
+  <title>抽奖后台管理系统</title>
 
   <meta name="description" content="User login page" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,10 +46,10 @@
             <div class="row-fluid">
               <div class="center">
                 <h1> <i class="icon-leaf green"></i>
-                  <span class="red">Ace</span>
-                  <span class="white">Application</span>
+                  <span class="red">抽奖</span>
+                  <span class="white">后台管理系统</span>
                 </h1>
-                <h4 class="blue">&copy; Company Name</h4>
+                <h4 class="blue">&copy; 鹰瑞</h4>
               </div>
             </div>
 
@@ -61,7 +61,7 @@
                   <div class="widget-body">
                     <div class="widget-main">
                       <h4 class="header blue lighter bigger"> <i class="icon-coffee green"></i>
-                        Please Enter Your Information
+                        请输入你的信息
                       </h4>
 
                       <div class="space-6"></div>
@@ -72,7 +72,7 @@
                         <label>
                           <span class="block input-icon input-icon-right">
                             <%= f.email_field :email, :autofocus =>
-                            true, :class => "span12", :placeholder => "Email" %>
+                            true, :class => "span12", :placeholder => "邮箱" %>
                             <i class="icon-user"></i>
                           </span>
                         </label>
@@ -80,7 +80,7 @@
                         <label>
                           <span class="block input-icon input-icon-right">
                             <%= f.password_field :password, :class =>
-                            "span12", placeholder: "Password" %>
+                            "span12", placeholder: "密码" %>
                             <i class="icon-lock"></i>
                           </span>
                         </label>
@@ -91,12 +91,12 @@
                           <label class="inline">
                             <% if devise_mapping.rememberable? -%>
                             <%= f.check_box :remember_me %>
-                            <span class="lbl">Remember Me</span>
+                            <span class="lbl">记住我</span>
                             <% end -%></label>
 
                           <button class="width-35 pull-right btn btn-small btn-primary">
                             <i class="icon-key"></i>
-                            Login
+                            登录
                           </button>
                         </div>
 
@@ -104,23 +104,7 @@
                       </fieldset>
                       <% end -%>
 
-                      <div class="social-or-login center">
-                        <span class="bigger-110">Or Login Using</span>
-                      </div>
 
-                      <div class="social-login center">
-                        <a class="btn btn-primary">
-                          <i class="icon-facebook"></i>
-                        </a>
-
-                        <a class="btn btn-info">
-                          <i class="icon-twitter"></i>
-                        </a>
-
-                        <a class="btn btn-danger">
-                          <i class="icon-google-plus"></i>
-                        </a>
-                      </div>
                     </div>
                     <!--/widget-main-->
 

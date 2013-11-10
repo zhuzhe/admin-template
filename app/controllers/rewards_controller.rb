@@ -10,6 +10,7 @@ class RewardsController < ApplicationController
   # GET /rewards/1
   # GET /rewards/1.json
   def show
+    @activity = @reward.activity
   end
 
   # GET /rewards/new
@@ -19,6 +20,7 @@ class RewardsController < ApplicationController
 
   # GET /rewards/1/edit
   def edit
+    @activity = @reward.activity
   end
 
   # POST /rewards
@@ -70,7 +72,7 @@ class RewardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reward_params
-      params.require(:reward).permit(:activity_id, :name, :desc, :photo, :amount, :photo_url)
+      params.require(:reward).permit(:activity_id, :name, :desc, :photo, :amount, :photo_url, :bussiness_id)
     end
 
     def find_activity

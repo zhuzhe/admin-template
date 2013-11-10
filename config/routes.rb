@@ -1,13 +1,30 @@
 Lottery::Application.routes.draw do
   
+  resources :orders
+
+  resources :consumers
+
+  resources :tickets
+
+  resources :bussinesses
+
   resources :rewards
   
   resources :activities do
     resources :rewards
+    resources :tickets
   end
 
 
   devise_for :users, :controllers => { :sessions => "sessions" }
+
+
+  get '/consumer/login', to: 'consumer/sessions#create'
+  get '/consumer/logout', to: 'consumer/sessions#destroy'
+  get '/consumer/buy', to: 'consumer/orders#create'
+  get '/consumer/exchange', to: 'consumer/tickets#exchange'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
