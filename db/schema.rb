@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110175523) do
+ActiveRecord::Schema.define(version: 20131111171950) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(version: 20131110175523) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.integer  "lottery_count",       default: 0
   end
 
   create_table "orders", force: true do |t|
@@ -68,6 +74,14 @@ ActiveRecord::Schema.define(version: 20131110175523) do
     t.integer  "business_id"
     t.string   "conversion_time"
     t.integer  "bussiness_id"
+  end
+
+  create_table "session_tokens", force: true do |t|
+    t.string   "token"
+    t.string   "cache"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "consumer_id"
   end
 
   create_table "tickets", force: true do |t|

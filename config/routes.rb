@@ -23,6 +23,12 @@ Lottery::Application.routes.draw do
   get '/consumer/logout', to: 'consumer/sessions#destroy'
   get '/consumer/buy', to: 'consumer/orders#create'
   get '/consumer/exchange', to: 'consumer/tickets#exchange'
+  get '/consumer/activities', to: 'consumer/activities#index'
+  get '/consumer/change_profile', to: 'consumer/consumers#update'
+  get '/consumer/lottery', to: 'consumer/tickets#lottery'
+  get '/consumer/tickets', to: 'consumer/tickets#index'
+  get '/consumer/buy_lottery', to: 'consumer/consumers#buy_lottery_count'
+  get '/consumer/lottery_count', to: 'consumer/consumers#lottery_count'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

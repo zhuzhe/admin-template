@@ -27,17 +27,13 @@
 
   <h3 class="header smaller lighter green"></h3>                    
 
-
-  <p>
-    <strong>名称:</strong>
-    <%= @bussiness.name %>
-  </p>
-
-  <p>
-    <strong>加入时间:</strong>
-    <%= @bussiness.join_time %>
-  </p>
-
+  <div class="well">
+                      <h4 class="green smaller lighter">商家名称 </h4>
+  <%= @bussiness.name %>
+                      <h4 class="green smaller lighter">加入时间</h4>
+                     
+                        <%= @bussiness.join_time %>
+                    </div>
 
 </div>
 

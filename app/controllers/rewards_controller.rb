@@ -72,7 +72,8 @@ class RewardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reward_params
-      params.require(:reward).permit(:activity_id, :name, :desc, :photo, :amount, :photo_url, :bussiness_id)
+      params.require(:reward).permit(:activity_id, :name, :desc, :photo, 
+        :amount, :photo_url, :bussiness_id, :rate, :used_time, :is_used)
     end
 
     def find_activity

@@ -8,5 +8,11 @@ class Reward < ActiveRecord::Base
   def left_amount 
     0
   end
+
+  def info
+    {
+      id: id, name: name, desc: desc  
+    }
+  end
   
 end
